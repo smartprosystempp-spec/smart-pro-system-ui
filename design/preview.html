@@ -112,7 +112,7 @@
     card.classList.toggle('is-off',s==='off');
     card.classList.toggle('is-bad',disabled);
     byId('status').textContent=label+(s==='on'?' · '+pct+'%':'');
-    byId('details').textContent={on:'Σε λειτουργία',off:'Απενεργοποιημένο',unavailable:'Δεν υπάρχει επικοινωνία',unknown:'Ανεπιβεβαίωτη κατάσταση'}[s];
+    byId('details').textContent={on:'Σε λειτουργία',off:'Απενεργοποιημένο',unavailable:'Η συσκευή δεν είναι διαθέσιμη',unknown:'Ανεπιβεβαίωτη κατάσταση'}[s];
     byId('pct').textContent=s==='on'?pct+'%':'—';
     b.disabled=s!=='on'; byId('power').disabled=disabled;
   }
