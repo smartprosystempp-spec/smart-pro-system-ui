@@ -42,3 +42,16 @@ This QA2 tag is never an override of either the original Light Card or QA1, so t
 When invited, add the generated QA2 JavaScript as a **new** local module resource and create cards with `type: custom:smart-pro-light-sizing-qa-card`. Keep existing alpha.10 and QA1 files and resource registrations unchanged.
 
 Use one test helper entity (e.g. `light.smart_pro_test_dimmer`), vary only `density`, and compare on mobile/tablet/desktop. Do not use real operational devices for this checkpoint. No installation instructions or customer release are issued until the candidate passes source and visual QA.
+
+## Offline sizing preview for the owner's review
+
+The **sizing review** is built directly from the generated QA2 JavaScript and the canonical theme CSS; it does not use an unrelated visual mockup.
+
+- Source HTML: `design/sizing-review.template.html`
+- Build script: `design/build-sizing-preview.cjs`
+- Output: `dist/smart-pro-light-sizing-review.html` (self-contained, offline)
+- CI artifact: `smart-pro-light-sizing-visual-review`
+- Compare all three density presets, Night/Graphite/Light, Solid/Soft Glass/Glass, and desktop/tablet/mobile widths.
+- The card uses mocked Home Assistant entities and local-only service handlers. Buttons and sliders do not connect to any actual light or installation.
+
+**Visual review gate:** The example is only for first comparison of proportions. On-device Home Assistant QA is still required, and no density or responsive breakpoint is considered final before owner review.
