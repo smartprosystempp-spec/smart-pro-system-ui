@@ -55,3 +55,17 @@ The **sizing review** is built directly from the generated QA2 JavaScript and th
 - The card uses mocked Home Assistant entities and local-only service handlers. Buttons and sliders do not connect to any actual light or installation.
 
 **Visual review gate:** The example is only for first comparison of proportions. On-device Home Assistant QA is still required, and no density or responsive breakpoint is considered final before owner review.
+
+## Local browser visual smoke test (2026-11-03)
+
+The exact HTML generated and archived by GitHub Actions was opened in headless Chromium and exercised with simulated helper entities. **PASS as a browser smoke test, not real Home Assistant QA.**
+
+- Desktop 1040px (Night): Ultra Compact 87px, Compact 100px, Comfortable 124px.
+- Tablet 720px (Graphite): Ultra Compact 87px, Compact 100px, Comfortable 124px.
+- Mobile 390px (Light): Ultra Compact 87px, Compact 106px, Comfortable 131px.
+- Narrow Mobile 320px (Night): Ultra Compact 87px, Compact 100px, Comfortable 124px.
+- No horizontal overflow detected in the three rendered cards at the four tested widths.
+- No JavaScript page errors; simulated ON/OFF changed state locally.
+- These are measurements of the *offline comparison layout*, not definitive dimensions within a real Lovelace dashboard.
+
+The review HTML and screenshots were bundled for the owner. **Do not treat sizing as final until the owner sees it and actual Home Assistant mobile/tablet behavior is checked.**
