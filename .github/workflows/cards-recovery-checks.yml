@@ -61,3 +61,12 @@ jobs:
           path: dist/smart-pro-light-sizing-review.html
           if-no-files-found: error
           retention-days: 14
+
+      - name: Attach isolated themed Cover QA candidate
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-pro-cover-themed-qa
+          path: dist/smart-pro-cover-qa.js
+          if-no-files-found: error
+          retention-days: 14
