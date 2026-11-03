@@ -34,3 +34,12 @@ jobs:
           path: dist/smart-pro-cards-themed.js
           if-no-files-found: error
           retention-days: 14
+
+      - name: Attach separately registered Light QA card
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-pro-light-isolated-qa
+          path: dist/smart-pro-light-qa.js
+          if-no-files-found: error
+          retention-days: 14
