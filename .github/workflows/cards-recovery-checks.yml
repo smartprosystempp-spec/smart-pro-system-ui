@@ -52,3 +52,12 @@ jobs:
           path: dist/smart-pro-light-sizing-qa.js
           if-no-files-found: error
           retention-days: 14
+
+      - name: Attach offline three-density Light Card visual review
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-pro-light-sizing-visual-review
+          path: dist/smart-pro-light-sizing-review.html
+          if-no-files-found: error
+          retention-days: 14
