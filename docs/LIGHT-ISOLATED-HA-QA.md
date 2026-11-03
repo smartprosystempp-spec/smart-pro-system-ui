@@ -20,7 +20,20 @@ The isolated QA artifact **only** registers `smart-pro-light-qa-card`. It includ
 
 Run `npm test` to regenerate and validate. Never manually edit generated output.
 
-## Controlled Home Assistant live checkpoint (NOT PERFORMED)
+## Live QA record — 2026-11-03 (partial, owner screenshots)
+
+**Test Home Assistant instance only.** The existing `/config/www/smart-pro-cards/smart-pro-cards.js` was kept, and the QA file was added separately at `/config/www/smart-pro-cards/smart-pro-light-qa.js`. A JavaScript module resource was registered as `/local/smart-pro-cards/smart-pro-light-qa.js?v=qa1`.
+
+- **PASS — initial loading:** `custom:smart-pro-light-qa-card` rendered in the real Lovelace editor and after Save, using `light.smart_pro_test_dimmer`, a helper-based test entity.
+- **PASS — basic on-state visual feedback:** owner reported the test helper responded; screenshot showed `Αναμμένο · 79%` and matching slider/active styling in Night / Soft Glass. This is not verification against a physical dimmer.
+- **PASS — Graphite / Glass visual:** screenshot showed `Αναμμένο · 29%`, dark graphite surface, readable label, aligned slider and accent.
+- **PASS — Light / Solid visual:** screenshot showed `Αναμμένο · 29%`, bright surface, dark legible title, amber state/accent and aligned slider.
+- **Observed:** the helper shows 1% even when off; owner explained this arises from its original helper configuration and does not treat it as a blocker.
+- **Owner feedback:** visual direction is positive; mobile/tablet sizing is not yet approved based on the desktop/preview screenshots alone.
+
+**Still pending:** direct real-device test; independently verified slider service-call behavior on actual hardware; unknown/unavailable state in the live HA UI; glass over a visibly patterned wallpaper; actual mobile/tablet touch/resize checks; accessible keyboard/focus review; formal final design approval. The Light QA module remains experimental. No changes to the main branch or original production resources.
+
+## Controlled Home Assistant live checkpoint (PARTIALLY PERFORMED)
 
 **Only when the owner is ready for an explicitly controlled visual/functional test.**
 
