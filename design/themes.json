@@ -1,0 +1,69 @@
+{
+  "schema": "smart-pro-system-cards-theme-v1",
+  "defaultTheme": "night",
+  "defaultSurface": "solid",
+  "metrics": {
+    "cardRadius": "18px",
+    "cardPadding": "16px",
+    "controlRadius": "12px",
+    "focusRingWidth": "2px"
+  },
+  "themes": {
+    "night": {
+      "canvas": "#0B1524",
+      "surface": "#13263D",
+      "surfaceRGB": "19 38 61",
+      "text": "#F4F9FF",
+      "muted": "#B7C7D7",
+      "border": "#3C5874",
+      "accent": "#51D5FA",
+      "active": "#F0B945",
+      "success": "#4FDEAC",
+      "warning": "#F0B945",
+      "error": "#FF8B8B",
+      "focus": "#80E2FF"
+    },
+    "graphite": {
+      "canvas": "#1B2026",
+      "surface": "#2A3038",
+      "surfaceRGB": "42 48 56",
+      "text": "#F4F6F8",
+      "muted": "#C0C7CF",
+      "border": "#626C78",
+      "accent": "#8DD9EA",
+      "active": "#EDBD72",
+      "success": "#74DBAE",
+      "warning": "#EDBD72",
+      "error": "#FF9A9A",
+      "focus": "#AFE7F3"
+    },
+    "light": {
+      "canvas": "#EAF1F7",
+      "surface": "#FFFFFF",
+      "surfaceRGB": "255 255 255",
+      "text": "#172B43",
+      "muted": "#526478",
+      "border": "#B8CDD9",
+      "accent": "#087CA3",
+      "active": "#996400",
+      "success": "#167B58",
+      "warning": "#93630D",
+      "error": "#B63543",
+      "focus": "#087CA3"
+    }
+  },
+  "surfaces": {
+    "solid": {
+      "alpha": 1,
+      "blur": "0px"
+    },
+    "soft-glass": {
+      "alpha": 0.92,
+      "blur": "12px"
+    },
+    "glass": {
+      "alpha": 0.84,
+      "blur": "20px"
+    }
+  }
+}
