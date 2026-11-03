@@ -17,12 +17,12 @@ Preview reads the project's intended room/entity model and uses simulated/illust
 - State handling: active, inactive, unknown, unavailable, transition; distinguish verified faults from merely offline devices.
 
 ## Card inventory
-**Recovered historical families:** Light, Cover, Thermostat. The alpha.10 runtime is *not yet in this branch*.
+**Recovered historical families:** Light, Cover, Thermostat. The original alpha.10 runtime was restored without modification in the recovery branch; it is not a released HACS package.
 
 **Future candidates:** Switch/Plug, Sensors/Measurements, Scenes/Scripts, Security, Locks/Gates, Media, Energy, Weather, Cameras, Room Summary. Prioritize by real Design Studio and Home Assistant use, not by creating every card simultaneously.
 
 ## Technical migration plan
-1. Import and hash-verify untouched `smart-pro-cards.js`.
+1. Imported and hash-verified untouched `smart-pro-cards.js` in the recovery foundation.
 2. Add smoke/capability tests, examples and safe distribution metadata.
 3. Run live Home Assistant light/cover/thermostat QA.
 4. Extract design tokens incrementally without behavior regressions.
