@@ -1,0 +1,75 @@
+/* Generated from design/themes.json. Do not edit manually. */
+[data-sp-theme] {
+  --sp-card-radius: 18px;
+  --sp-card-padding: 16px;
+  --sp-control-radius: 12px;
+  --sp-focus-ring-width: 2px;
+}
+[data-sp-theme="night"] {
+  --sp-canvas: #0B1524;
+  --sp-surface: #13263D;
+  --sp-surface-r-g-b: 19 38 61;
+  --sp-text: #F4F9FF;
+  --sp-muted: #B7C7D7;
+  --sp-border: #3C5874;
+  --sp-accent: #51D5FA;
+  --sp-active: #F0B945;
+  --sp-success: #4FDEAC;
+  --sp-warning: #F0B945;
+  --sp-error: #FF8B8B;
+  --sp-focus: #80E2FF;
+}
+[data-sp-theme="graphite"] {
+  --sp-canvas: #1B2026;
+  --sp-surface: #2A3038;
+  --sp-surface-r-g-b: 42 48 56;
+  --sp-text: #F4F6F8;
+  --sp-muted: #C0C7CF;
+  --sp-border: #626C78;
+  --sp-accent: #8DD9EA;
+  --sp-active: #EDBD72;
+  --sp-success: #74DBAE;
+  --sp-warning: #EDBD72;
+  --sp-error: #FF9A9A;
+  --sp-focus: #AFE7F3;
+}
+[data-sp-theme="light"] {
+  --sp-canvas: #EAF1F7;
+  --sp-surface: #FFFFFF;
+  --sp-surface-r-g-b: 255 255 255;
+  --sp-text: #172B43;
+  --sp-muted: #526478;
+  --sp-border: #B8CDD9;
+  --sp-accent: #087CA3;
+  --sp-active: #996400;
+  --sp-success: #167B58;
+  --sp-warning: #93630D;
+  --sp-error: #B63543;
+  --sp-focus: #087CA3;
+}
+[data-sp-surface="solid"] {
+  --sp-surface-alpha: 1;
+  --sp-backdrop-blur: 0px;
+}
+[data-sp-surface="soft-glass"] {
+  --sp-surface-alpha: 0.92;
+  --sp-backdrop-blur: 12px;
+}
+[data-sp-surface="glass"] {
+  --sp-surface-alpha: 0.84;
+  --sp-backdrop-blur: 20px;
+}
+.sp-themed-card-surface {
+  color: var(--sp-text);
+  background: rgb(var(--sp-surface-r-g-b) / var(--sp-surface-alpha, 1));
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-card-radius);
+  backdrop-filter: blur(var(--sp-backdrop-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--sp-backdrop-blur, 0px));
+}
+@media (prefers-contrast: more), (forced-colors: active) {
+  [data-sp-surface] { --sp-surface-alpha: 1; --sp-backdrop-blur: 0px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  [data-sp-surface] { --sp-surface-alpha: 1; --sp-backdrop-blur: 0px; }
+}
