@@ -4,9 +4,11 @@
   "version": "0.1.0-alpha.10",
   "description": "Historical recovery baseline, not a published release",
   "scripts": {
-    "test": "node --check smart-pro-cards.js && node tests/smoke.cjs && node tests/theme-contract.cjs && node tests/preview-contract.cjs && node tests/standalone-preview.cjs && node design/build-preview.cjs --check",
-    "pretest": "node design/build-preview.cjs",
+    "test": "node --check smart-pro-cards.js && node tests/smoke.cjs && node tests/theme-contract.cjs && node tests/preview-contract.cjs && node tests/standalone-preview.cjs && node design/build-preview.cjs --check && node --check dist/smart-pro-cards-themed.js && node tests/themed-light-runtime.cjs && node design/build-light-runtime.cjs --check",
+    "pretest": "node design/build-preview.cjs && node design/build-light-runtime.cjs",
     "preview:build": "node design/build-preview.cjs",
-    "preview:check": "node design/build-preview.cjs --check"
+    "preview:check": "node design/build-preview.cjs --check",
+    "light:build": "node design/build-light-runtime.cjs",
+    "light:check": "node design/build-light-runtime.cjs --check"
   }
 }
