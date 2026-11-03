@@ -26,3 +26,11 @@ jobs:
           path: dist/smart-pro-light-visual-lab.html
           if-no-files-found: error
           retention-days: 14
+      - name: Attach experimental Light Card runtime candidate
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-pro-light-runtime-candidate
+          path: dist/smart-pro-cards-themed.js
+          if-no-files-found: error
+          retention-days: 14
