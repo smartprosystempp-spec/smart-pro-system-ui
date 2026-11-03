@@ -21,3 +21,20 @@ The Home Assistant runtime remains authoritative. The Design Studio uses these a
 - No source changes to recovered alpha.10 in this branch
 - No live HA resource URL changes or HACS release yet
 - No licensing decision made for third-party distribution
+
+## First visual review checkpoint: Light Card
+
+Open `design/preview.html` in a browser **with the sibling `design/themes.css` file available in the same folder**. This is an interactive, self-contained **design-only** lab using shared theme tokens, not an actual `custom:smart-pro-light-card` runtime.
+
+The review selectors cover:
+- Night / Graphite / Light
+- Solid / Soft Glass / Glass
+- Aurora / Warm / Plain background
+- Desktop / Tablet / Mobile preview widths
+- On / Off / Unavailable / Unknown demo states, with a simulated brightness slider
+
+**Review gate:** No Light Card style migration, Cover/Thermostat restyling, or customer-facing Design Studio visual commitment is final before the user sees a live side-by-side visual checkpoint. The user should be shown a working preview, not only code or screenshots.
+
+Limitations: the laboratory uses illustrative data and basic controls; it does not implement Home Assistant service calls, actual entity capabilities, device fault diagnostics, drag/drop layout, screen reader QA or installation packages. A real HA live QA follows once the Light Card runtime is migrated.
+
+**Visual decision log:** First agree on card hierarchy, radius, typography, spacing, semantic states, responsiveness and wallpaper transparency. Then implement those decisions across the runtime using the same design tokens. Prefer legibility to transparency.
