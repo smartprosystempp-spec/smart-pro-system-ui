@@ -18,3 +18,11 @@ jobs:
           node-version: '22'
       - name: Source integrity and registration smoke test
         run: npm test
+      - name: Publish Light Card visual review artifact
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-pro-light-visual-lab
+          path: dist/smart-pro-light-visual-lab.html
+          if-no-files-found: error
+          retention-days: 14
