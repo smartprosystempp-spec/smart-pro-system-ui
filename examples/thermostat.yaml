@@ -1,0 +1,3 @@
+type: custom:smart-pro-thermostat-card
+entity: climate.living_room
+name: Θερμοστάτης σαλονιού
