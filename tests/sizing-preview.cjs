@@ -10,7 +10,7 @@ assert(html.includes('data-sp-canonical-tokens'));
 assert(html.includes('data-sp-theme="night"'));
 assert(!/<link[^>]+href=|<script[^>]+src=|https?:\/\/|fetch\s*\(|XMLHttpRequest|WebSocket/i.test(html));
 for(const x of ['ultra','compact','comfortable','theme','surface','viewport','wallpaper','canvas','stage'])assert(html.includes('id="'+x+'"'),'Missing '+x);
-for(const x of ['desktop','tablet','mobile'])assert(html.includes('value="'+x+'"'));
+for(const x of ['desktop','tablet','mobile','mobile-small'])assert(html.includes('value="'+x+'"'));
 for(const x of ['night','graphite','light'])assert(html.includes('value="'+x+'"'));
 for(const x of ['solid','soft-glass','glass'])assert(html.includes('value="'+x+'"'));
 for(const x of ['ultra-compact','compact','comfortable'])assert(html.includes("'"+x+"'"));
