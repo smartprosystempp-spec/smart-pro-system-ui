@@ -38,3 +38,16 @@ The review selectors cover:
 Limitations: the laboratory uses illustrative data and basic controls; it does not implement Home Assistant service calls, actual entity capabilities, device fault diagnostics, drag/drop layout, screen reader QA or installation packages. A real HA live QA follows once the Light Card runtime is migrated.
 
 **Visual decision log:** First agree on card hierarchy, radius, typography, spacing, semantic states, responsiveness and wallpaper transparency. Then implement those decisions across the runtime using the same design tokens. Prefer legibility to transparency.
+
+## Portable customer-facing visual review (no Home Assistant installation)
+
+Each pull request CI run builds a **single offline HTML file** from `design/preview.html` and the canonical `design/themes.css` tokens.
+
+- Generate locally: `npm run preview:build`, which writes `dist/smart-pro-light-visual-lab.html`.
+- Verify locally: `npm test`, which builds the file and checks visual-preview controls and offline independence.
+- Or open the latest successful **Smart Pro Cards recovery checks** run on the feature pull request, download the artifact named `smart-pro-light-visual-lab`, extract it, and open `smart-pro-light-visual-lab.html` in a modern desktop/mobile browser.
+- The preview offers theme, surface, wallpaper, viewport and entity-state choices, and a simulated dimmer slider.
+
+This is a **design review deliverable**, not a Home Assistant resource, integration, HACS release or representation of completed functional QA. Do not copy the generated HTML into the Home Assistant `www` directory or install it through HACS.
+
+**Visual review gate:** Discuss the Light card's appearance with the project owner before refactoring any real entity-control UI. Keep pull requests in draft while the proposed look is being evaluated.
