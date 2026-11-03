@@ -43,3 +43,12 @@ jobs:
           path: dist/smart-pro-light-qa.js
           if-no-files-found: error
           retention-days: 14
+
+      - name: Attach separate responsive-sizing Light QA2 candidate
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: smart-pro-light-responsive-qa2
+          path: dist/smart-pro-light-sizing-qa.js
+          if-no-files-found: error
+          retention-days: 14
