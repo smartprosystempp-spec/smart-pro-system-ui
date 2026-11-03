@@ -4,13 +4,16 @@
   "version": "0.1.0-alpha.10",
   "description": "Historical recovery baseline, not a published release",
   "scripts": {
-    "test": "node --check smart-pro-cards.js && node tests/smoke.cjs && node tests/theme-contract.cjs && node tests/preview-contract.cjs && node tests/standalone-preview.cjs && node design/build-preview.cjs --check && node --check dist/smart-pro-cards-themed.js && node tests/themed-light-runtime.cjs && node design/build-light-runtime.cjs --check && node --check dist/smart-pro-light-qa.js && node tests/light-isolated-qa.cjs && node design/build-light-qa.cjs --check",
-    "pretest": "node design/build-preview.cjs && node design/build-light-runtime.cjs && node design/build-light-qa.cjs",
+    "test": "node --check smart-pro-cards.js && node tests/smoke.cjs && node tests/theme-contract.cjs && node tests/preview-contract.cjs && node tests/standalone-preview.cjs && node design/build-preview.cjs --check && node --check dist/smart-pro-cards-themed.js && node tests/themed-light-runtime.cjs && node design/build-light-runtime.cjs --check && node --check dist/smart-pro-light-qa.js && node tests/light-isolated-qa.cjs && node design/build-light-qa.cjs --check && node --check dist/smart-pro-light-sizing-qa.js && node tests/light-sizing-qa.cjs && node design/build-light-sizing-qa.cjs --check && node tests/sizing-preview.cjs && node design/build-sizing-preview.cjs --check",
+    "pretest": "node design/build-preview.cjs && node design/build-light-runtime.cjs && node design/build-light-qa.cjs && node design/build-light-sizing-qa.cjs && node design/build-sizing-preview.cjs",
     "preview:build": "node design/build-preview.cjs",
     "preview:check": "node design/build-preview.cjs --check",
     "light:build": "node design/build-light-runtime.cjs",
     "light:check": "node design/build-light-runtime.cjs --check",
     "light:qa:build": "node design/build-light-runtime.cjs && node design/build-light-qa.cjs",
-    "light:qa:check": "node design/build-light-qa.cjs --check"
+    "light:qa:check": "node design/build-light-qa.cjs --check",
+    "light:sizing:build": "node design/build-light-runtime.cjs && node design/build-light-qa.cjs && node design/build-light-sizing-qa.cjs",
+    "light:sizing:check": "node design/build-light-sizing-qa.cjs --check",
+    "light:sizing:preview": "node design/build-light-runtime.cjs && node design/build-light-qa.cjs && node design/build-light-sizing-qa.cjs && node design/build-sizing-preview.cjs"
   }
 }

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Pro System Light QA2 — Sizing Review</title>
+<link rel="stylesheet" href="./themes.css">
+<style>
+  * {box-sizing:border-box}
+  :root {font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  body {margin:0;background:#edf2f6;color:#172b43}
+  header,.toolbar,.frame {max-width:1160px;margin:auto;padding-left:18px;padding-right:18px}
+  header {padding-top:25px;padding-bottom:14px}
+  header h1 {font-size:clamp(21px,3vw,30px);letter-spacing:-.04em;margin:0 0 5px}
+  header p {color:#506477;margin:0;font-size:14px;line-height:1.5}
+  .disclaimer {margin-top:12px;padding:11px 13px;border-radius:12px;background:#e1eef6;border:1px solid #bad5e4;color:#234e64;font-size:13px}
+  .toolbar {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-top:12px;padding-bottom:18px}
+  label {display:grid;gap:5px;font-size:12px;font-weight:700;color:#516479}
+  select {font:inherit;font-size:14px;padding:10px;border-radius:10px;border:1px solid #b4c6d4;background:#fff;color:#152a40;width:100%;min-width:0}
+  .frame {padding-bottom:30px}
+  .stage {max-width:100%;width:1040px;margin:auto;border-radius:20px;border:1px solid #a7b6c5;overflow:hidden;box-shadow:0 16px 40px #182e4d2c;transition:width .15s ease}
+  .stage[data-viewport="tablet"] {width:720px}
+  .stage[data-viewport="mobile"] {width:390px}
+  .stage[data-viewport="mobile-small"] {width:320px}
+  .canvas {padding:26px 22px 32px;min-height:470px;background:var(--sp-canvas);color:var(--sp-text);position:relative;isolation:isolate}
+  .canvas::before {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(140deg,#152539,#263957)}
+  .canvas[data-wallpaper="aurora"]::before {background:radial-gradient(circle at 90% 5%,#5089aeaa,transparent 42%),radial-gradient(circle at 8% 90%,#8661a9aa,transparent 47%),linear-gradient(135deg,#15243c,#234058)}
+  .canvas[data-wallpaper="warm"]::before {background:radial-gradient(circle at 85% 24%,#bc775d99,transparent 43%),radial-gradient(circle at 11% 82%,#506fb799,transparent 42%),linear-gradient(135deg,#292f45,#40364d)}
+  .canvas[data-wallpaper="plain"]::before {background:var(--sp-canvas)}
+  .kicker {font-size:12px;font-weight:800;letter-spacing:.13em;color:var(--sp-accent)}
+  .sub {font-size:13px;color:var(--sp-muted);margin:5px 0 20px}
+  .grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .stage[data-viewport="tablet"] .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stage[data-viewport="mobile"] .grid,.stage[data-viewport="mobile-small"] .grid {grid-template-columns:1fr}
+  .slot {min-width:0}
+  .slot-head {font-size:12px;font-weight:750;color:var(--sp-muted);margin-bottom:7px}
+  .slot-desc {font-size:11px;color:var(--sp-muted);margin-top:8px}
+  .notes {margin-top:23px;font-size:12px;color:var(--sp-muted);line-height:1.5}
+  .stage[data-viewport="mobile"] .canvas,.stage[data-viewport="mobile-small"] .canvas {padding:20px 13px 28px}
+  @media(max-width:700px) {.toolbar {grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce) {.stage{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Smart Pro System · Light Card Sizes</h1>
+  <p>Σύγκριση Ultra Compact, Compact και Comfortable, με τον πραγματικό πειραματικό κώδικα QA2.</p>
+  <div class="disclaimer">Εικονικές οντότητες — καμία σύνδεση στο Home Assistant, καμία εντολή σε πραγματικό φωτισμό. Η τελική έγκριση μεγέθους θα γίνει σε πραγματικό dashboard.</div>
+</header>
+<div class="toolbar">
+  <label for="viewport">Χώρος dashboard
+    <select id="viewport"><option value="desktop">Desktop · 1040px</option><option value="tablet">Tablet · 720px</option><option value="mobile">Mobile · 390px</option><option value="mobile-small">Small Mobile · 320px</option></select>
+  </label>
+  <label for="theme">Θέμα
+    <select id="theme"><option value="night">Night</option><option value="graphite">Graphite</option><option value="light">Light</option></select>
+  </label>
+  <label for="surface">Επιφάνεια
+    <select id="surface"><option value="solid">Solid</option><option value="soft-glass" selected>Soft Glass</option><option value="glass">Glass</option></select>
+  </label>
+  <label for="wallpaper">Φόντο
+    <select id="wallpaper"><option value="aurora">Aurora</option><option value="warm">Warm</option><option value="plain">Χωρίς εικόνα</option></select>
+  </label>
+</div>
+<div class="frame">
+  <div class="stage" id="stage" data-viewport="desktop">
+    <div class="canvas" id="canvas" data-sp-theme="night" data-sp-surface="soft-glass" data-wallpaper="aurora">
+      <div class="kicker">SMART PRO SYSTEM</div>
+      <p class="sub">Demo χώρος · Φωτισμός</p>
+      <div class="grid">
+        <div class="slot"><div class="slot-head">ULTRA COMPACT</div><div id="ultra"></div><div class="slot-desc">Ελάχιστη πυκνότητα</div></div>
+        <div class="slot"><div class="slot-head">COMPACT</div><div id="compact"></div><div class="slot-desc">Καθημερινός χειρισμός</div></div>
+        <div class="slot"><div class="slot-head">COMFORTABLE</div><div id="comfortable"></div><div class="slot-desc">Μεγαλύτερα χειριστήρια</div></div>
+      </div>
+      <p class="notes">Ο αριθμός καρτών δεν περιορίζεται από αυτό το δείγμα. Το Home Assistant καθορίζει τη διάταξη του dashboard. Ο dimmer και το ON/OFF λειτουργούν μόνο με εικονικά δεδομένα.</p>
+    </div>
+  </div>
+</div>
+<!--QA2_RUNTIME-->
+<script>
+(() => {
+  'use strict';
+  const get = id => document.getElementById(id);
+  const densities = ['ultra-compact','compact','comfortable'];
+  const cards = [];
+  const states = {};
+  for(const density of densities){
+    const id = 'light.sps_demo_' + density.replace('-', '_');
+    states[id]={state:'on',attributes:{friendly_name:'Demo φωτισμός',supported_color_modes:['brightness'],brightness:173}};
+  }
+  const hass={states,callService(domain,service,data){
+    const entity = states[data.entity_id];
+    if(!entity || domain!=='light')return;
+    if(service==='toggle')entity.state=entity.state==='on'?'off':'on';
+    else if(service==='turn_on') {
+      entity.state='on';
+      entity.attributes.brightness=Math.max(1,Math.min(255,Math.round(Number(data.brightness_pct)*2.55)));
+    }
+    update();
+  }};
+  for(const density of densities){
+    const id = density==='ultra-compact'?'ultra':density;
+    const card=document.createElement('smart-pro-light-sizing-qa-card');
+    get(id).appendChild(card);
+    cards.push({card,density,entity:'light.sps_demo_'+density.replace('-', '_')});
+  }
+  function update(){
+    const theme=get('theme').value,surface=get('surface').value;
+    get('canvas').dataset.spTheme=theme;
+    get('canvas').dataset.spSurface=surface;
+    for(const {card,density,entity} of cards){
+      card.setConfig({entity,name:'Demo φωτισμός',density,theme,surface});
+      card.hass=hass;
+    }
+  }
+  for(const id of ['theme','surface'])get(id).addEventListener('change',update);
+  get('viewport').addEventListener('change', e=>get('stage').dataset.viewport=e.target.value);
+  get('wallpaper').addEventListener('change',e=>get('canvas').dataset.wallpaper=e.target.value);
+  update();
+})();
+</script>
+</body>
+</html>
