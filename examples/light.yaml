@@ -1,0 +1,4 @@
+type: custom:smart-pro-light-card
+entity: light.living_room
+name: Φωτισμός σαλονιού
+density: compact

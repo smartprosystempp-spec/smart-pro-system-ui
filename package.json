@@ -1,0 +1,9 @@
+{
+  "name": "smart-pro-system-cards-recovery",
+  "private": true,
+  "version": "0.1.0-alpha.10",
+  "description": "Historical recovery baseline, not a published release",
+  "scripts": {
+    "test": "node --check smart-pro-cards.js && node tests/smoke.cjs"
+  }
+}

@@ -1,0 +1,4 @@
+type: custom:smart-pro-cover-card
+entity: cover.living_room_blind
+name: Ρολό σαλονιού
+density: compact
