@@ -21,6 +21,7 @@
   .stage {max-width:100%;width:1040px;margin:auto;border-radius:20px;border:1px solid #a7b6c5;overflow:hidden;box-shadow:0 16px 40px #182e4d2c;transition:width .15s ease}
   .stage[data-viewport="tablet"] {width:720px}
   .stage[data-viewport="mobile"] {width:390px}
+  .stage[data-viewport="mobile-small"] {width:320px}
   .canvas {padding:26px 22px 32px;min-height:470px;background:var(--sp-canvas);color:var(--sp-text);position:relative;isolation:isolate}
   .canvas::before {content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(140deg,#152539,#263957)}
   .canvas[data-wallpaper="aurora"]::before {background:radial-gradient(circle at 90% 5%,#5089aeaa,transparent 42%),radial-gradient(circle at 8% 90%,#8661a9aa,transparent 47%),linear-gradient(135deg,#15243c,#234058)}
@@ -30,12 +31,12 @@
   .sub {font-size:13px;color:var(--sp-muted);margin:5px 0 20px}
   .grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .stage[data-viewport="tablet"] .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stage[data-viewport="mobile"] .grid {grid-template-columns:1fr}
+  .stage[data-viewport="mobile"] .grid,.stage[data-viewport="mobile-small"] .grid {grid-template-columns:1fr}
   .slot {min-width:0}
   .slot-head {font-size:12px;font-weight:750;color:var(--sp-muted);margin-bottom:7px}
   .slot-desc {font-size:11px;color:var(--sp-muted);margin-top:8px}
   .notes {margin-top:23px;font-size:12px;color:var(--sp-muted);line-height:1.5}
-  .stage[data-viewport="mobile"] .canvas {padding:20px 13px 28px}
+  .stage[data-viewport="mobile"] .canvas,.stage[data-viewport="mobile-small"] .canvas {padding:20px 13px 28px}
   @media(max-width:700px) {.toolbar {grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce) {.stage{transition:none}}
 </style>
@@ -48,7 +49,7 @@
 </header>
 <div class="toolbar">
   <label for="viewport">Χώρος dashboard
-    <select id="viewport"><option value="desktop">Desktop · 1040px</option><option value="tablet">Tablet · 720px</option><option value="mobile">Mobile · 390px</option></select>
+    <select id="viewport"><option value="desktop">Desktop · 1040px</option><option value="tablet">Tablet · 720px</option><option value="mobile">Mobile · 390px</option><option value="mobile-small">Small Mobile · 320px</option></select>
   </label>
   <label for="theme">Θέμα
     <select id="theme"><option value="night">Night</option><option value="graphite">Graphite</option><option value="light">Light</option></select>
